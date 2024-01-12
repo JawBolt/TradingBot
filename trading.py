@@ -6,6 +6,12 @@ import math
 import json
 
 running = True
+config = open("r", "config.txt")
+
+# debug
+debug = False
+if config.read() == "debug=True":
+  debug = True
 
 # Algo
 #
@@ -37,7 +43,7 @@ class create_candle:
   def get_id(self):
     return self.id
     
-def green_red(open, close):
+def green_red(open, close, self):
   temp = float(open) - float(close)
   if temp => 0:
     return "red"
@@ -46,7 +52,12 @@ def green_red(open, close):
     return "green"
 
   else:
-    return "An Error Occured!"
+    print("An Error Occured!")
+    if debug == True:
+      print("Debug")
+      print(" ")
+      print("open: " + str(open))
+      print("close: " + str(close))
 
 
 
