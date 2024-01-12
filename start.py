@@ -6,6 +6,7 @@ print(" ")
 print("Crypto Trading bot V1")
 print("By JawBolt (George)")
 print(" ")
+
 api_key = input("Enter your API Key: " )
 api_secret = input("Enter your Secret Key: ")
 try:
