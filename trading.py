@@ -6,12 +6,6 @@ import math
 import json
 
 running = True
-config = open("r", "config.txt")
-
-# debug
-debug = False
-if config.read() == "debug=True":
-  debug = True
 
 # Algo
 #
@@ -53,11 +47,7 @@ def green_red(open, close, self):
 
   else:
     print("An Error Occured!")
-    if debug == True:
-      print("Debug")
-      print(" ")
-      print("open: " + str(open))
-      print("close: " + str(close))
+    return "err"
 
 
 
