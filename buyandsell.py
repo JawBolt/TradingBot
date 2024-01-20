@@ -6,8 +6,6 @@ import json
 import simple_colors as color
 
 def sell(API_KEY, SECRET_KEY):
-#    API_KEY = "ZMYJai18BpGDDnTKJAADTN"
-#    SECRET_KEY = "MovYm39t5ZMN1nZvHceSc3"
 
     req = {
         "id": 11,
@@ -63,9 +61,7 @@ def sell(API_KEY, SECRET_KEY):
     print(color.red("SELL"), req["params"]["quantity"], req["params"]["instrument_name"])
 
 def buy(API_KEY, SECRET_KEY):
-    
-#    API_KEY = "ZMYJai18BpGDDnTKJAADTN"
-#    SECRET_KEY = "MovYm39t5ZMN1nZvHceSc3"
+
 
     req = {
         "id": 11,
