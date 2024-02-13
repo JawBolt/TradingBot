@@ -1,0 +1,28 @@
+---ALGO---
+1. Look for chart patterns
+2. Look for a bullish candle patturn
+3. Caculate a support and reslist (+- 75)
+4. Check if its going to go up or down (if up then buy, if down sell)
+5. Set a bot stoploss (figure out how much later)
+
+---TO DO LIST---
+2. get a basic algo done 
+3. add extra and more flexable market_data api
+4. add error codes and error logging and debug mode
+5. make bot interface
+
+---BOT COMMANDS TO DO LIST---
+bal --> returns users main balence
+orders --> returns all current orders
+stop --> stops the bot temp
+help --> displays commands
+profit --> returns caculated gain percentage (negative number for a loss)
+coin --> returns current traded coin
+shutdown --> completly closes the bot, exits all trades and exits the program
+
+---CONFIG FILE---
+COIN=<BTC,SOL,ETH,DOGE> (SOL be default)
+LOGGING=<True or False> (True by default)
+USD=<ammount of usd the bot trades with at a time> (cant be more than users bal, bot trades with 20% of users bal by default)
+DEBUG=<True or False> (False by default)
+

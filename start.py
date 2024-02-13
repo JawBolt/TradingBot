@@ -3,7 +3,7 @@ import user_data as UD
 import trading
 
 print(" ")
-print("Crypto Trading bot V1")
+print("Crypto Trading bot V2")
 print("By JawBolt (George)")
 print(" ")
 
