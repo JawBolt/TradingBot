@@ -1,7 +1,7 @@
 ---ALGO---
 1. Look for chart patterns
 2. Look for a bullish candle patturn
-3. Caculate a support and reslist (+- 75)
+3. Caculate a support and resist (+- 75)
 4. Check if its going to go up or down (if up then buy, if down sell)
 5. Set a bot stoploss (figure out how much later)
 
