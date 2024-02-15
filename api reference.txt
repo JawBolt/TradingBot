@@ -1,0 +1,13 @@
+
+User_data:
+
+--get users bal--
+
+user_data.user_balence(<api key>, <api_secret>)
+
+
+Market_data:
+
+--get candle data--
+
+market_data.last_candles(<count>, <symbol>)
