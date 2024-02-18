@@ -4,14 +4,32 @@ import market_data as ms
 import buyandsell
 import math
 import json
+import threading
 
 coin = ""
+
 config = open("config.txt", "r")
 content = config.readlines()
 if content[0] == "COIN=SOL":
     coin = "SOL"
+    print("SOL")
+
+if content[0] == "COIN=BTC":
+    coin = "BTC"
+    print("BTC")
+
+if content[0] == "COIN=ETH":
+    coin = "ETH"
+    print("ETH")
+
+
 running = True
 
+def USD_amount(usd, instrument):
+    coin_price = ms.coin_price(str(instrument))
+    coin_div_usd = float(coin_price) / float(usd)
+    amount = 1 / float(coin_div_usd)
+    return amount
 
 
 def main(api_key, api_secret):
@@ -36,5 +54,14 @@ def main(api_key, api_secret):
             print("Your current main balence is: " + UD.user_balence(str(api_key), str(api_secret)))
 
         if cmd == "coin":
-            print("The currently traded coin is: " + )
+            print("The currently traded coin is: " + str(coin))
+
+        
+
+        
+        
+
+
+        
+
 

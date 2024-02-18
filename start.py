@@ -1,6 +1,7 @@
 
 import user_data as UD
 import trading
+import time
 
 print(" ")
 print("Crypto Trading bot V2")
@@ -14,7 +15,7 @@ try:
     print(" ")
     print("Succesful login!")
     print(" ")
-    print("Your current Balence is", UD.user_balence(str(api_key), str(api_secret)))
+    print("Your current Balence is ", UD.user_balence(str(api_key), str(api_secret)))
     print(" ")
     print("Starting...")
     trading.main(str(api_key), str(api_secret))
@@ -24,4 +25,5 @@ except:
     print(" ")
     print("Invalid keys or unable to connect!")
     print("Exiting...")
+    time.sleep(2)
     exit()

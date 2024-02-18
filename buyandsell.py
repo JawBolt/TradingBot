@@ -5,16 +5,16 @@ import requests
 import json
 import simple_colors as color
 
-def sell(API_KEY, SECRET_KEY):
+def sell(API_KEY, SECRET_KEY, instrument, amount):
 
     req = {
         "id": 11,
         "method": "private/create-order",
         "params": {
-            "instrument_name": "BTC_USD",
+            "instrument_name": str(instrument),
             "side": "SELL",
             "type": "MARKET",
-            "quantity": "0.00045",
+            "quantity": str(amount),
           },
         "api_key": str(API_KEY),
         "sig": "",
@@ -60,17 +60,17 @@ def sell(API_KEY, SECRET_KEY):
     #print(sell_response.content)
     print(color.red("SELL"), req["params"]["quantity"], req["params"]["instrument_name"])
 
-def buy(API_KEY, SECRET_KEY):
+def buy(API_KEY, SECRET_KEY, amount, instrument):
 
 
     req = {
         "id": 11,
         "method": "private/create-order",
         "params": {
-            "instrument_name": "BTC_USD",
+            "instrument_name": str(instrument),
             "side": "BUY",
             "type": "MARKET",
-            "quantity": "0.00045"
+            "quantity": str(amount)
           },
         "api_key": str(API_KEY),
         "sig": "",

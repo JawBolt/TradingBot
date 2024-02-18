@@ -12,6 +12,10 @@ Market_data:
 
 market_data.last_candles(<count>, <symbol>)
 
+--lastest coin price--
+
+market_data.coin_price(<instrument>)
+
 buyandsell:
 
 --sell--
