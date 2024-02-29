@@ -31,8 +31,12 @@ def USD_amount(usd, instrument):
     amount = 1 / float(coin_div_usd)
     return amount
 
-
 def main(api_key, api_secret):
+    while running == True:
+        
+
+
+def interface(api_key, api_secret):
     print(" ")
     print("All bot activity will be displayed here")
     print(" ")
