@@ -15,11 +15,10 @@ try:
     print(" ")
     print("Succesful login!")
     print(" ")
-    print("Your current Balence is ", UD.user_balence(str(api_key), str(api_secret)))
+    print("Your current Balence is $", UD.user_balence(str(api_key), str(api_secret)))
     print(" ")
     print("Starting...")
-    trading.main(str(api_key), str(api_secret))
-    
+    trading.start = True
 
 except:
     print(" ")

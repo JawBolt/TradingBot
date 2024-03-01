@@ -5,8 +5,12 @@ import buyandsell
 import math
 import json
 import threading
+import start as st
 
+start = False
 coin = ""
+Amount = 1
+open_trade = False
 
 config = open("config.txt", "r")
 content = config.readlines()
@@ -22,19 +26,21 @@ if content[0] == "COIN=ETH":
     coin = "ETH"
     print("ETH")
 
+def USD_amount(balence):
+    USD = balence / 10
+    return USD
 
-running = True
-
-def USD_amount(usd, instrument):
+def Trade_amount(usd, instrument):
     coin_price = ms.coin_price(str(instrument))
     coin_div_usd = float(coin_price) / float(usd)
     amount = 1 / float(coin_div_usd)
     return amount
 
-def main(api_key, api_secret):
-    while running == True:
-        
-
+def RedGreen(open, close):
+    if float(open) > float(close):
+        return "Red"
+    if float(close) > float(open):
+        return "Green"
 
 def interface(api_key, api_secret):
     print(" ")
@@ -43,28 +49,49 @@ def interface(api_key, api_secret):
     print("Type help for commands.")
     print(" ")
 
-    while running == True:
+    while start == True:
         cmd = input("> ")
 
         if cmd == "help":
             print("bal --> returns your balence")
             print("orders --> returns all open orders")
-            print("stop --> stops the bot temporarily")
             print("coin --> returns what coin is being traded")
             print("profit --> shows profit/loss from when the bot started until now")
-            print("shutdown --> exits the program")
+            print("stop --> exits the program")
 
         if cmd == "bal":
-            print("Your current main balence is: " + UD.user_balence(str(api_key), str(api_secret)))
+            print("Your current main balence is: " + UD.user_balence(str(st.api_key), str(st.api_secret)))
 
         if cmd == "coin":
             print("The currently traded coin is: " + str(coin))
 
+Interface = threading.Thread(target=interface, args=(st.api_key, st.api_secret))
+
+def bullish(open1, close2):
+    if float(open1) < float(close2):
+        return "Bull"
+    
+    if float(open1) > float(close2):
+        return "Bear"
+
+
+def main(api_key, api_secret):
+    while start == True:
+        Interface.start()
+        Amount = Trade_amount(float(USD_amount(UD.user_balence(st.api_key, st.api_secret))), str(coin))
         
+        newest_candle = ms.last_candles(0, coin)
+        latest_10_candles = ms.last_candles(10, coin)
+
+        #Algo
+        if bullish(newest_candle["o"], latest_10_candles[1]["c"]) == "Bull":
+
 
         
-        
 
+if start == True:
+    main(st.api_key, st.api_secret)
+        
 
         
 

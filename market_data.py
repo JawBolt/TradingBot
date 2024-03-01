@@ -7,6 +7,7 @@ def last_candles(count, symbol):
     content = request.content
     json_content = json.loads(content)
     return json_content["result"]["data"]
+    # 0 is newest and <count> is oldest
 
 def coin_price(symbol):
     latest_candle = last_candles(1, str(symbol))

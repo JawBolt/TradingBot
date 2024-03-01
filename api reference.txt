@@ -9,8 +9,10 @@ user_data.user_balence(<api key>, <api_secret>)
 Market_data:
 
 --get candle data--
+#0 is newest and <count> is oldest
 
 market_data.last_candles(<count>, <symbol>)
+
 
 --lastest coin price--
 
