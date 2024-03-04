@@ -18,7 +18,7 @@ try:
     print("Your current Balence is $", UD.user_balence(str(api_key), str(api_secret)))
     print(" ")
     print("Starting...")
-    trading.start = True
+    trading.main(str(api_key), str(api_secret))
 
 except:
     print(" ")

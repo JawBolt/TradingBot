@@ -65,7 +65,7 @@ def interface(api_key, api_secret):
         if cmd == "coin":
             print("The currently traded coin is: " + str(coin))
 
-Interface = threading.Thread(target=interface, args=(st.api_key, st.api_secret))
+
 
 def bullish(open1, close2):
     if float(open1) < float(close2):
@@ -78,13 +78,17 @@ def bullish(open1, close2):
         return "Nothing"
 
 
-def main(api_key, api_secret):
+def main(apiKey, apiSecret):
+    api_key = apiKey
+    api_secret = apiSecret
+    Interface = threading.Thread(target=interface, args=(api_key, api_secret))
+    Interface.start()
     while start == True:
-        Interface.start()
-        Amount = Trade_amount(float(USD_amount(UD.user_balence(st.api_key, st.api_secret))), str(coin))
         
-        newest_candle = ms.last_candles(0, coin)
-        latest_10_candles = ms.last_candles(10, coin)
+        Amount = Trade_amount(float(USD_amount(UD.user_balence(api_key, api_secret))), str(coin))
+        
+        newest_candle = ms.last_candles(0, str(coin))
+        latest_10_candles = ms.last_candles(10, str(coin))
 
         #Algo
         if bullish(newest_candle["o"], latest_10_candles[1]["c"]) == "Bull":
@@ -95,13 +99,9 @@ def main(api_key, api_secret):
 
         elif bullish(newest_candle["o"], latest_10_candles[1]["c"]) == "Nothing":
             print("Nothing")
-
-
         
+        time.sleep(5)
 
-if start == True:
-    main(st.api_key, st.api_secret)
-        
 
         
 
