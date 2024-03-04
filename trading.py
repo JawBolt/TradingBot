@@ -5,7 +5,6 @@ import buyandsell
 import math
 import json
 import threading
-import start as st
 
 start = False
 coin = ""
