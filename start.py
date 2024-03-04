@@ -1,6 +1,6 @@
 
 import user_data as UD
-import trading
+#import trading
 import time
 
 print(" ")
