@@ -11,7 +11,7 @@ print(" ")
 api_key = input("Enter your API Key: " )
 api_secret = input("Enter your Secret Key: ")
 
-if UD.user_balence(str(api_key), str(api_secret)) > 0:
+if float(UD.user_balence(str(api_key), str(api_secret))) > 0:
     print(" ")
     print("Succesful login!")
     print(" ")

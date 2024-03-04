@@ -26,7 +26,7 @@ if content[0] == "COIN=ETH":
     print("ETH")
 
 def USD_amount(balence):
-    USD = balence / 10
+    USD = float(balence) / 10
     return USD
 
 def Trade_amount(usd, instrument):
