@@ -73,6 +73,9 @@ def bullish(open1, close2):
     
     if float(open1) > float(close2):
         return "Bear"
+    
+    else:
+        return "Nothing"
 
 
 def main(api_key, api_secret):
@@ -85,6 +88,13 @@ def main(api_key, api_secret):
 
         #Algo
         if bullish(newest_candle["o"], latest_10_candles[1]["c"]) == "Bull":
+            print("Bull")
+
+        elif bullish(newest_candle["o"], latest_10_candles[1]["c"]) == "Bear":
+            print("Bear")
+
+        elif bullish(newest_candle["o"], latest_10_candles[1]["c"]) == "Nothing":
+            print("Nothing")
 
 
         
