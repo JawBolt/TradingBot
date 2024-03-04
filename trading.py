@@ -6,7 +6,7 @@ import math
 import json
 import threading
 
-start = False
+start = True
 coin = ""
 Amount = 1
 open_trade = False
@@ -82,8 +82,6 @@ def main(apiKey, apiSecret):
     api_secret = apiSecret
     Interface = threading.Thread(target=interface, args=(api_key, api_secret))
     while start == True:
-
-        Interface.start()
         
         Amount = Trade_amount(float(USD_amount(UD.user_balence(api_key, api_secret))), str(coin))
         
