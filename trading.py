@@ -81,8 +81,9 @@ def main(apiKey, apiSecret):
     api_key = apiKey
     api_secret = apiSecret
     Interface = threading.Thread(target=interface, args=(api_key, api_secret))
-    Interface.start()
     while start == True:
+
+        Interface.start()
         
         Amount = Trade_amount(float(USD_amount(UD.user_balence(api_key, api_secret))), str(coin))
         
