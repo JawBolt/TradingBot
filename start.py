@@ -10,8 +10,8 @@ print(" ")
 
 api_key = input("Enter your API Key: " )
 api_secret = input("Enter your Secret Key: ")
-try:
-    UD.user_balence(str(api_key), str(api_secret))
+
+if UD.user_balence(str(api_key), str(api_secret)):
     print(" ")
     print("Succesful login!")
     print(" ")
@@ -20,7 +20,7 @@ try:
     print("Starting...")
     trading.main(str(api_key), str(api_secret))
 
-except:
+else:
     print(" ")
     print("Invalid keys or unable to connect!")
     print("Exiting...")
