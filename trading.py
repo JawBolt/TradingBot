@@ -5,6 +5,7 @@ import buyandsell
 import math
 import json
 import threading
+import interface
 
 start = False
 coin = "SOL_USD"
@@ -59,10 +60,10 @@ def main(apiKey, apiSecret):
     start = True
     api_key = apiKey
     api_secret = apiSecret
-    Interface = threading.Thread(target=interface, args=(api_key, api_secret))
+    interface.interface(str(api_key), str(api_secret))
     while start == True:
         
-        Amount = Trade_amount(float(USD_amount(UD.user_balence(api_key, api_secret))), str(coin))
+        Amount = Trade_amount(float(USD_amount(UD.user_balence(api_key, api_secret))), "SOL_USD")
         
         newest_candle = ms.last_candles(0, str(coin))
         latest_10_candles = ms.last_candles(10, str(coin))
