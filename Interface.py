@@ -19,4 +19,4 @@ def interface(api_key, api_secret):
             print("Your current main balence is: " + UD.user_balence(str(st.api_key), str(st.api_secret)))
 
         if cmd == "coin":
-            print("The currently traded coin is: " + str(coin))
+            print("The currently traded coin is: Sol_USD")
