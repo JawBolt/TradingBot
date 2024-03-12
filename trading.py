@@ -6,24 +6,24 @@ import math
 import json
 import threading
 
-start = True
-coin = ""
+start = False
+coin = "SOL_USD"
 Amount = 1
 open_trade = False
 
-config = open("config.txt", "r")
-content = config.readlines()
-if content[0] == "COIN=SOL":
-    coin = "SOL"
-    print("SOL")
-
-if content[0] == "COIN=BTC":
-    coin = "BTC"
-    print("BTC")
-
-if content[0] == "COIN=ETH":
-    coin = "ETH"
-    print("ETH")
+#config = open("config.txt", "r")
+#content = config.readlines()
+#if content[0] == "COIN=SOL":
+#    coin = "SOL"
+#    print("SOL")
+#
+#if content[0] == "COIN=BTC":
+#    coin = "BTC"
+#    print("BTC")
+#
+#if content[0] == "COIN=ETH":
+#    coin = "ETH"
+#    print("ETH")
 
 def USD_amount(balence):
     USD = float(balence) / 10
@@ -41,28 +41,6 @@ def RedGreen(open, close):
     if float(close) > float(open):
         return "Green"
 
-def interface(api_key, api_secret):
-    print(" ")
-    print("All bot activity will be displayed here")
-    print(" ")
-    print("Type help for commands.")
-    print(" ")
-
-    while start == True:
-        cmd = input("> ")
-
-        if cmd == "help":
-            print("bal --> returns your balence")
-            print("orders --> returns all open orders")
-            print("coin --> returns what coin is being traded")
-            print("profit --> shows profit/loss from when the bot started until now")
-            print("stop --> exits the program")
-
-        if cmd == "bal":
-            print("Your current main balence is: " + UD.user_balence(str(st.api_key), str(st.api_secret)))
-
-        if cmd == "coin":
-            print("The currently traded coin is: " + str(coin))
 
 
 
@@ -78,6 +56,7 @@ def bullish(open1, close2):
 
 
 def main(apiKey, apiSecret):
+    start = True
     api_key = apiKey
     api_secret = apiSecret
     Interface = threading.Thread(target=interface, args=(api_key, api_secret))
