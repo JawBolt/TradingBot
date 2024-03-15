@@ -10,21 +10,7 @@ import interface
 start = False
 coin = "SOL_USD"
 Amount = 1
-open_trade = False
-
-#config = open("config.txt", "r")
-#content = config.readlines()
-#if content[0] == "COIN=SOL":
-#    coin = "SOL"
-#    print("SOL")
-#
-#if content[0] == "COIN=BTC":
-#    coin = "BTC"
-#    print("BTC")
-#
-#if content[0] == "COIN=ETH":
-#    coin = "ETH"
-#    print("ETH")
+open_long = False
 
 def USD_amount(balence):
     USD = float(balence) / 10
@@ -42,19 +28,17 @@ def RedGreen(open, close):
     if float(close) > float(open):
         return "Green"
 
-
-
+def open_trade(open_orders):
+    if open_orders.open == True:
+        open_trade = True
 
 def bullish(open1, close2):
     if float(open1) < float(close2):
         return "Bull"
-    
     if float(open1) > float(close2):
         return "Bear"
-    
     else:
         return "Nothing"
-
 
 def main(apiKey, apiSecret):
     start = True

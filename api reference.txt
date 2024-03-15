@@ -5,6 +5,8 @@ User_data:
 
 user_data.user_balence(<api key>, <api_secret>)
 
+user_data.open_orders(<api_key>, <api_secret>)
+
 
 Market_data:
 

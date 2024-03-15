@@ -55,3 +55,7 @@ def user_balence(API_KEY, SECRET_KEY):
     dict_str = content.decode('utf-8')
     json_bal = json.loads(dict_str)
     return json_bal["result"]["data"][0]["total_cash_balance"]
+
+
+def open_orders(API_KEY, SECRET_KEY):
+    return False 

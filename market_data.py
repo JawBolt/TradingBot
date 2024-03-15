@@ -12,3 +12,4 @@ def last_candles(count, symbol):
 def coin_price(symbol):
     latest_candle = last_candles(1, str(symbol))
     return latest_candle[0]["c"]
+

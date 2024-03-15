@@ -116,6 +116,3 @@ def buy(API_KEY, SECRET_KEY, amount, instrument):
     #print(sell_response.content)
     print(color.green("BUY"), req["params"]["quantity"], req["params"]["instrument_name"])
     
-
-
-
